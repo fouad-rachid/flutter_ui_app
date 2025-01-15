@@ -10,17 +10,31 @@ class HomePage extends StatelessWidget {
       appBar: appBar(),
       backgroundColor: Colors.white,
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _searchField(),
           SizedBox(height: 40),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Category',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-                fontWeight: FontWeight.w600
+              Padding(
+                padding: const EdgeInsets.all(15),
+                child: Text('Category',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600
+                ),
+                ),
               ),
+              SizedBox(height: 15),
+              Container(
+                height: 150,
+                color: Colors.green,
+                child:ListView.builder(
+                    itemBuilder: (context, index){
+                      return Container();
+                    })
               )
             ],
           )
@@ -58,7 +72,7 @@ class HomePage extends StatelessWidget {
                 child:SvgPicture.asset('assets/icons/Search.svg') ,
               ),
 
-              suffixIcon: Container(
+              suffixIcon: SizedBox(
                 width: 100,
                 child: IntrinsicHeight(
                   child: Row(
